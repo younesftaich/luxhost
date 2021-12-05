@@ -42,7 +42,7 @@ function pricing(props) {
        
       }, [])
 
-      var realtoken = "AY6maEX10t-5kFZ4TfCdmgHsDVdLSSH_3Hy62r6YKUkPZG9dYYh_ogDk9N9e2zNdPPMNXTw-ONx3j6DP"
+      var realtoken = "AUMitlI_222JYXifu1gApIkXZ_zlY-R_8M2cqwCbHarpPSA3VBYztGL4m8aV3I7yrb43oY8ralteLr2r"
     return (
 
         <div className="font-Poppins font-semibold min-h-screen bg-indigo-100">
