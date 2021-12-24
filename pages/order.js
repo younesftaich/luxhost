@@ -121,7 +121,7 @@ function Checkout(props) {
      
   }
   else {
-   Router.push('/checkout')
+   Router.push('/order')
   }
 
  }, [uniqueid])
@@ -130,7 +130,7 @@ function Checkout(props) {
      
   }
   else {
-   Router.push('/checkout')
+   Router.push('/order')
   }
 
  }, [email])
@@ -222,7 +222,7 @@ const initcheck = event => {
       }
       else {
      
-            document.location.href = '/checkout'
+            document.location.href = '/order'
          
       }
    }
