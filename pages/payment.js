@@ -10,7 +10,8 @@ import { useRouter } from 'next/router'
 
 import { Icon } from '@iconify/react';
 function pricing(props) {
-    
+          var realtoken = "Ae7yufvIGhx95N_MUYmEOShfosBOz8aUmZEPfxc75ydyBo6RrsA_Bhr74oIYs7amzXMwAlNllDcfd0C5"
+
     var router = useRouter();
     var email = router.query.email;
     const uniqueid = router.query.subid;
@@ -42,7 +43,6 @@ function pricing(props) {
        
       }, [])
 
-      var realtoken = "AbWGovnz8ZdhbWX1m4qhhZcnwo4ERd4xdSKNY-zx2oGT9i7fXOap17y48ffeSlj7S471dYHhI2AX-3o4"
     return (
 
         <div className="font-Poppins font-semibold min-h-screen bg-indigo-100">
