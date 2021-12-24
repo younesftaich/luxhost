@@ -28,7 +28,7 @@ function pricing(props) {
                   setPackName(result[0].pack)
                   setLastPrice(result[0].total)
   
-                 console.log(result[0]) })
+                  })
                    })  ();
       }
       
