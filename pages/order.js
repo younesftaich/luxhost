@@ -2,7 +2,6 @@ import React, { useEffect,useState } from 'react';
 import Moment from 'react-moment';
 import moment from 'moment';
 import { Icon } from '@iconify/react';
-import * as EmailValidator from 'email-validator';
 import {  useRouter } from 'next/router'
 import Head from 'next/head'
 import Router from "next/router";
