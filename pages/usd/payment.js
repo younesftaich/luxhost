@@ -1,5 +1,5 @@
 import { PayPalButton } from "react-paypal-button-v2";
-import { gettoken } from "../utils"
+import { gettoken } from "../../utils/utils"
 
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
