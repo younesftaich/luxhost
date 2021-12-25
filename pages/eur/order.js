@@ -66,7 +66,7 @@ function Checkout(props) {
   const [myemail, setEmail] = useState("");
   const [wtp, setWtp] = useState("");
    const [newsub, setNew] = useState(true);
-   const [symbol,setSymbol] = useState("£")
+   const [symbol,setSymbol] = useState("€")
    const [proxyprice,setProxy] = useState("0.99")
    const [extra,setExtra] = useState("7.99")
    const [adult,setAdult] = useState(false)
@@ -122,7 +122,7 @@ function Checkout(props) {
      
   }
   else {
-   Router.push('/order')
+   Router.push('/eur/order')
   }
 
  }, [uniqueid])
@@ -131,7 +131,7 @@ function Checkout(props) {
      
   }
   else {
-   Router.push('/order')
+   Router.push('/eur/order')
   }
 
  }, [email])
@@ -145,7 +145,7 @@ let date=today.getDate() + "-"+ parseInt(today.getMonth()+1) +"-"+today.getFullY
    
   const changemail = (e) => {
    setEmail(e.target.value)
-   axios.post(API_URL+'add.php', {email : e.target.value,date : date , ip:ip,website : "uk-lux"}).then(function(result) {
+   axios.post(API_URL+'add.php', {email : e.target.value,date : date , ip:ip,website : "eur-lux"}).then(function(result) {
    } )
    
    
@@ -212,25 +212,25 @@ const initcheck = event => {
    proxychecked ? mypack = mypack + '' : mypack ;
    var myuniqueid = makeid(15);
 
-   const updatedata = {uniqueid :myuniqueid , placeddate : getCurrentDate(), pack : myplan,ip:ip,  paid : "init checkout " , plan :packageid  ,total : lastprice,currency : currency,mac : mac ,  email : myemail ,wtp : wtp , proxy : proxychecked ? 'yes' : 'no', adult : adult ? 'yes' : 'no' , device : Device, type : type, website : 'uk-lux'};
+   const updatedata = {uniqueid :myuniqueid , placeddate : getCurrentDate(), pack : myplan,ip:ip,  paid : "init checkout " , plan :packageid  ,total : lastprice,currency : currency,mac : mac ,  email : myemail ,wtp : wtp , proxy : proxychecked ? 'yes' : 'no', adult : adult ? 'yes' : 'no' , device : Device, type : type, website : 'eur-lux'};
    if ( subid == null ){
       if ( uniqueid == null) {
         
          axios.post(API_URL+'addSubscription.php', updatedata).then(function(result) {
      
-            document.location.href = 'https://luxuryhosting.shop/payment?subid='+myuniqueid
+            document.location.href = 'https://luxuryhosting.shop/eur/payment?subid='+myuniqueid
          } )
       }
       else {
      
-            document.location.href = '/order'
+            document.location.href = '/eur/order'
          
       }
    }
    else {
       axios.post(API_URL+'addSubscription.php', updatedata).then(function(result) {
      
-         document.location.href = 'https://luxuryhosting.shop/payment?subid='+myuniqueid
+         document.location.href = 'https://luxuryhosting.shop/eur/payment?subid='+myuniqueid
       } )
    }
    
@@ -369,7 +369,7 @@ const Month12 = () => {
     }   
     const toggleGbp = () => {
       setCurrency("GBP")
-      setSymbol("£")
+      setSymbol("€")
       setSvg("https://netflytv.com/svg/currency-flags/gbp.svg")
       setCoeff(1)
     }    
@@ -377,7 +377,7 @@ const Month12 = () => {
    return (
       <div className="font-press-start  ">
          <Head>
-            <title>Checkout
+            <title>Complete Checkout
           </title>
        
 
@@ -418,7 +418,7 @@ const Month12 = () => {
 
                          <button  onClick={ () => toggleUsd() } className="block py-2 px-5 flex"><img className="h-6 rounded-md flex-shrink mr-2" src="https://netflytv.com/svg/currency-flags/usd.svg" alt="USD Currency flag"/><span>$ USD</span></button>
                       
-                      <button  onClick={ () => toggleGbp() } className="block py-2 px-5 flex"><img className="h-6 rounded-md flex-shrink mr-2" src="https://netflytv.com/svg/currency-flags/gbp.svg" alt="GBP Currency flag"/><span>£ GBP</span></button>
+                      <button  onClick={ () => toggleGbp() } className="block py-2 px-5 flex"><img className="h-6 rounded-md flex-shrink mr-2" src="https://netflytv.com/svg/currency-flags/gbp.svg" alt="GBP Currency flag"/><span>€ GBP</span></button>
                       
                       </div>
                   </div>

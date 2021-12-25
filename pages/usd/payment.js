@@ -1,5 +1,5 @@
 import { PayPalButton } from "react-paypal-button-v2";
-import { gettoken } from "./utils"
+import { gettoken } from "../utils"
 
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
@@ -83,7 +83,7 @@ function pricing(props) {
                  
                     </div>
 
-                    <div className="flex bg-indigo-50 rounded-md py-3 px-5"><span className="flex-1"></span><span className="mr-7">Total</span><span className="mr-7" ></span><span>£ {lastprice}</span></div>
+                    <div className="flex bg-indigo-50 rounded-md py-3 px-5"><span className="flex-1"></span><span className="mr-7">Total</span><span className="mr-7" ></span><span>$ {lastprice}</span></div>
 
 
                     </div>
@@ -91,9 +91,9 @@ function pricing(props) {
                         <PayPalButton
                amount = {lastprice}
               shippingPreference="NO_SHIPPING"
-               currency="GBP"
+               currency="USD"
                options={{
-                currency: "GBP",
+                currency: "USD",
                  clientId: realtoken
                }}
                
